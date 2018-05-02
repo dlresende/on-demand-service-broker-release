@@ -28,3 +28,6 @@
     release: ((service_adapter_release))
     properties:
       redis_instance_group_name: redis-server
+      bpm:
+        enabled: true
+        volumes: /var/vcap/data

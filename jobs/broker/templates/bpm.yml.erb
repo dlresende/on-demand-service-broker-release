@@ -1,0 +1,7 @@
+---
+processes:
+  - name: broker
+    executable: /var/vcap/packages/broker/bin/on-demand-service-broker
+    args:
+      - -configFilePath
+      - /var/vcap/jobs/broker/config/broker.yml

@@ -16,6 +16,8 @@ releases:
     version: latest
   - name: consul
     version: latest
+  - name: bpm
+    version: latest
 
 stemcells:
   - alias: &stemcell_alias ((stemcell_alias))
@@ -31,6 +33,9 @@ instance_groups:
     networks: [{name: ((broker_network))}]
     azs: [((instance_groups_azs))]
     jobs:
+      - name: bpm
+        release: bpm
+
       - name: register-broker
         release: ((broker_release))
         properties:
@@ -84,6 +89,8 @@ instance_groups:
           username: broker
           password: ((broker_password))
           shutdown_timeout_in_seconds: 10
+          bpm:
+            enabled: true
           bosh:
             url: ((bosh.url))
             authentication:

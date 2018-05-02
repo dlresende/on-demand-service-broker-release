@@ -11,6 +11,7 @@ templates:
   broker-ctl.sh.erb: bin/broker-ctl.sh
   broker.yml.erb: config/broker.yml
   drain.sh.erb: bin/drain
+  bpm.yml.erb: config/bpm.yml
 
 packages:
   - broker
